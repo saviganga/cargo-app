@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  cargo:
+    build: ./cargoApp
+    container_name: "cargo_app"
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./cargoApp:/usr/src/app
+    ports:
+      - "8000:8000"
